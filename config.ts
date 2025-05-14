@@ -35,7 +35,7 @@ export const config: Config = {
     transitGatewayName: 'TGW-1',
     //transitGatewayId: 'tgw-089da5bd5b8cc0340',
     attachmentPropagationCidrs: ['10.0.0.0/8'],
-    routeTableNames: [], // ['default', 'private'],
+    routeTableNames: ['default'], // ['default', 'private'],
     attachments: [
         {
             accountId: '241734811004',
