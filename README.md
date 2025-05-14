@@ -219,14 +219,15 @@ VPC route table if you select a subnet that has no explicit route table associat
 
 ### Transit Gateway Routing
 
-As shown above, you can list a number of route tables in the `routeTableNames` property.
-You will have to decide how to use them in the `attachments` configuration.
-When you reference a route table in the `tgwAssociationRouteTableName` property of an
-attachment configuration, the Transit Gateway will associate the VPC attachment with the
-referenced route table. This means that the Transit Gateway will use this route table
-for routing decisions for traffic coming from the specified VPC. Just like multiple
-subnets in a VPC can use the same VPC route table (association) multiple VPCs can use
-the same Transit Gateway route table (association) for their outgoing traffic.
+As shown above, you can list a number of Transit Gateway route tables in the
+`routeTableNames` property. You will have to decide how to use them in the `attachments`
+configuration. When you reference a Transit Gateway route table in the
+`tgwAssociationRouteTableName` property of an attachment configuration,
+the Transit Gateway will associate the VPC attachment with the referenced route table.
+This means that the Transit Gateway will use this route table for routing decisions for
+traffic _coming from the specified VPC_. Just like multiple subnets in a VPC can use
+the same VPC route table (association), multiple VPCs can use the same
+Transit Gateway route table (association) for their outgoing traffic.
 
 As long as there are no routing entries in a Transit Gateway route table, traffic
 is not going anywhere. You can create these entries by propagating (announcing) the
@@ -237,12 +238,12 @@ referenced Transit Gateway route table for the CIDRs of the attached VPC.
 
 #### Example
 
-Lets assume you have a VPC `A` that is already correctly attached to a Transit
+Let's assume you have a VPC `A` that is already correctly attached to a Transit
 Gateway and want to be able to send traffic from this VPC to VPC `B`.
 You know that VPC `B` is already attached to the Transit Gateway and *propagated*
-its CIDR block into the Transit Gateway's route table `D`. You can now
-*associate* your VPC `A` with the Transit Gateway route table `D` to make sure
-the Transit Gateway will use route table `D` for routing decisions for traffic
+its CIDR block into the Transit Gateway's route table `R`. You can now
+*associate* your VPC `A` with the Transit Gateway route table `R` to make sure
+the Transit Gateway will use route table `R` for routing decisions for traffic
 from VPC `A`.
 
 Using this concept will let you separate/isolate traffic from and to VPCs with
@@ -293,7 +294,8 @@ npm run tgw-routing deploy
 npm run tgw-attachments deploy -- --all
 npm run tgw-routing deploy
 ```
-(See (`deploy.sh`)[./deploy.sh].)
+(See [`deploy.sh`](./deploy.sh))
+
 If you want to deploy from your local machine, make sure to run
 ```
 npm run clear-context
@@ -306,7 +308,7 @@ even in a bootstrap run. Setting the `transitGatewayId` property will effectivel
 activate the other Apps.
 
 #### Deploying to a VPC
-Just set the parameters for a VPC attachment and call the above sequence
+Just set the parameters for a VPC attachment (see above), and call the above sequence
 with the credentials of the Transit Gateway account.
 
 #### Un-Deploying from a VPC (two-step deployment)
