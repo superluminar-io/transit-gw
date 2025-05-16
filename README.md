@@ -1,6 +1,6 @@
 # Transit Gateway
 
-This solution aims to help you deploy a Transit Gateway in an AWS organization.
+This blueprint aims to help you deploy a Transit Gateway in an AWS organization.
 AWS Transit Gateway is a service that enables you to connect your VPCs, VPNs,
 and on-premises networks using a single gateway. This allows you to route traffic
 between these networks and to manage the traffic flow.
@@ -15,6 +15,7 @@ subnets by ID, type or tag)
 - Declarative IaC configuration in a single file
 
 ## Architecture
+![Architecture](./img/architecture.png)
 
 ## Prerequisites
 
@@ -23,7 +24,7 @@ subnets by ID, type or tag)
 
 ## Modularity
 
-This solution is modular and must be deployed in steps. The following modules are available
+This blueprint is modular and must be deployed in steps. The following modules are available
 and their behavior depends on the configuration provided in the `config.ts` file (see below):
 - `vpc-role`: Creates a CloudFormation template for the deployment role to be used
 in the target accounts.
@@ -70,9 +71,9 @@ You can chose from a variety of methods, such as:
 ## Bootstrap And Usage
 
 The following sections will guide you through the usage and configuration of the
-solution.
+blueprint.
 
-**Important**: When you run this solution for the first time *make sure the config's
+**Important**: When you run this blueprint for the first time *make sure the config's
 `transitGatewayId` property is unset*. This will ensure that only the `tgw` App is
 causing changes effectively.
 
@@ -118,7 +119,7 @@ The `transitGatewayId` property is the ID of the Transit Gateway that was create
 the first run. You have to put this ID here in order to attach VPCs and create routes.
 
 The `routeTableNames` property lists the names of the Transit Gateway
-route tables to be created and managed by this solution. You are going to reference
+route tables to be created and managed by this blueprint. You are going to reference
 these names in the `attachments` configuration. The most simple setup would be to
 just have one route table in which case you put
 ```
