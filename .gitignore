@@ -32,6 +32,7 @@ jspm_packages/
 .cache
 /blueprints/**/package-lock.json
 /blueprints/**/yarn.lock
+/transit-gw/**
 /test-reports/
 junit.xml
 /coverage/

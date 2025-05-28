@@ -22,7 +22,7 @@ const project = new typescript.TypeScriptProject({
   ],
   // devDeps: [],             /* Build dependencies for this module. */
   sampleCode: false,
-  gitignore: ['/blueprints/**/package-lock.json', '/blueprints/**/yarn.lock'],
+  gitignore: ['/blueprints/**/package-lock.json', '/blueprints/**/yarn.lock', '/transit-gw/**'],
   githubOptions: {
     projenCredentials: github.GithubCredentials.fromApp(),
   },
