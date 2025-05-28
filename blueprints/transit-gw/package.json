@@ -1,0 +1,32 @@
+{
+  "name": "transit-gw",
+  "version": "0.1.0",
+  "bin": {
+    "transit-gw": "bin/transit-gw.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk",
+    "clear-context": "cdk context --clear && cdk acknowledge 32775",
+    "tgw": "cdk -o cdk.out.tgw -a 'ts-node bin/tgw.ts' ",
+    "tgw-routing": "cdk -o cdk.out.rtg -a 'ts-node bin/tgw-routing.ts'",
+    "tgw-attachments": "cdk -o cdk.out.att -a 'ts-node bin/tgw-attachments.ts'",
+    "vpc-role": "cdk -o cdk.out.vpc -a 'ts-node bin/vpc-role.ts' synth --no-version-reporting"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "20.14.9",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.5",
+    "aws-cdk": "^2.1016.1",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.5.3"
+  },
+  "dependencies": {
+    "@aws-sdk/client-ec2": "^3.808.0",
+    "aws-cdk-lib": "^2.199.0",
+    "constructs": "^10.4.2"
+  }
+}
