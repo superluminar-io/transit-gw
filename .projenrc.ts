@@ -4,7 +4,6 @@ import { NpmAccess } from 'projen/lib/javascript';
 const project = new typescript.TypeScriptProject({
   defaultReleaseBranch: 'main',
   name: '@superluminar-io/transit-gw',
-  packageName: 'superluminar-transit-gw-blueprint',
   description: 'A lean, opinionated blueprint to deploy Transit Gateway in an AWS Organization.',
   projenrcTs: true,
   autoDetectBin: true,

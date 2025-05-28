@@ -1,5 +1,5 @@
 {
-  "name": "superluminar-transit-gw-blueprint",
+  "name": "@superluminar-io/transit-gw",
   "description": "A lean, opinionated blueprint to deploy Transit Gateway in an AWS Organization.",
   "repository": {
     "type": "git",
