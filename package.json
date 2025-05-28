@@ -3,7 +3,7 @@
   "description": "A lean, opinionated blueprint to deploy Transit Gateway in an AWS Organization.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/superluminar-io/transit-gw.git"
+    "url": "git+https://github.com/superluminar-io/transit-gw.git"
   },
   "scripts": {
     "build": "npx projen build",

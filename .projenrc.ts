@@ -15,7 +15,7 @@ const project = new typescript.TypeScriptProject({
   release: true,
   package: true,
   npmAccess: NpmAccess.PUBLIC,
-  repository: 'https://github.com/superluminar-io/transit-gw.git',
+  repository: 'git+https://github.com/superluminar-io/transit-gw.git',
   deps: [
     'clipanion',
     'typescript',
