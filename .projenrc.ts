@@ -6,7 +6,9 @@ const project = new typescript.TypeScriptProject({
   name: '@superluminar-io/transit-gw',
   description: 'A lean, opinionated blueprint to deploy Transit Gateway in an AWS Organization.',
   projenrcTs: true,
-  autoDetectBin: true,
+  bin: {
+    'transit-gw': 'bin/transit-gw',
+  },
   license: 'MIT',
   authorOrganization: true,
   authorUrl: 'https://superluminar.io',
