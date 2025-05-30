@@ -5,6 +5,9 @@
     "type": "git",
     "url": "git+https://github.com/superluminar-io/transit-gw.git"
   },
+  "bin": {
+    "transit-gw": "bin/transit-gw"
+  },
   "scripts": {
     "build": "npx projen build",
     "bump": "npx projen bump",
